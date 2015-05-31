@@ -1,5 +1,7 @@
 package org.guihuotv.speech.util;
 
+import org.guihuotv.voicedemo.R;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -15,7 +17,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.iflytek.cloud.SpeechUtility;
-import com.iflytek.voicedemo.R;
 
 
 /**

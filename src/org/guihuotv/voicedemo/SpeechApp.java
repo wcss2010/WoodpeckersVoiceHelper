@@ -3,7 +3,6 @@ package org.guihuotv.voicedemo;
 import android.app.Application;
 
 import com.iflytek.cloud.SpeechUtility;
-import com.iflytek.voicedemo.R;
 
 public class SpeechApp extends Application {
 

@@ -40,7 +40,6 @@ import com.iflytek.cloud.ui.RecognizerDialogListener;
 import com.iflytek.cloud.util.ContactManager;
 import com.iflytek.cloud.util.ContactManager.ContactListener;
 import com.iflytek.sunflower.FlowerCollector;
-import com.iflytek.voicedemo.R;
 
 public class IatDemo extends Activity implements OnClickListener {
 	private static String TAG = IatDemo.class.getSimpleName();

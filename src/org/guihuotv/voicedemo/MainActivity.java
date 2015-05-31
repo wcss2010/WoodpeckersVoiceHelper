@@ -1,6 +1,9 @@
 package org.guihuotv.voicedemo;
 
-import com.iflytek.voicedemo.R;
+import java.util.List;
+
+import org.guihuotv.webservice.NgnSay;
+import org.guihuotv.webservice.VoiceCmdHelper;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -29,6 +32,26 @@ public class MainActivity extends Activity implements OnClickListener {
 		mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
 		SimpleAdapter listitemAdapter = new SimpleAdapter();
 		((ListView) findViewById(R.id.listview_main)).setAdapter(listitemAdapter);
+		
+		List<NgnSay> list = VoiceCmdHelper.getVoiceCmds("你好", false);
+		if (list != null) {
+			for (NgnSay ns : list) {
+				System.out.println(ns.toString());
+			}
+		}
+
+		List<NgnSay> list2 = VoiceCmdHelper.getVoiceCmds("天气", true);
+		if (list2 != null) {
+			for (NgnSay ns : list2) {
+				System.out.println(ns.toString());
+			}
+		}
+
+		boolean result = VoiceCmdHelper.addVoiceCmd("你好吗", "say", "哈哈，你好", false);
+		if (result)
+		{
+			System.out.println("添加成功！！！");
+		}
 	}
 
 	@Override

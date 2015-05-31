@@ -28,7 +28,6 @@ import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.cloud.SynthesizerListener;
 import com.iflytek.sunflower.FlowerCollector;
-import com.iflytek.voicedemo.R;
 
 public class TtsDemo extends Activity implements OnClickListener {
 	private static String TAG = TtsDemo.class.getSimpleName(); 	
