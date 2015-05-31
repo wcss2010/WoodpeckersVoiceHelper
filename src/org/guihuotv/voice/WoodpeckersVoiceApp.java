@@ -1,4 +1,4 @@
-package org.guihuotv.voicedemo;
+package org.guihuotv.voice;
 
 import org.guihuotv.voice.R;
 

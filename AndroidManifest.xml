@@ -9,7 +9,7 @@
         android:icon="@drawable/icon"
         android:label="啄木鸟语音助手" >
         <activity
-            android:name="org.guihuotv.voicedemo.MainActivity"
+            android:name="org.guihuotv.voice.MainActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:icon="@drawable/icon"
             android:label="啄木鸟语音助手"
@@ -25,12 +25,12 @@
         <activity android:name="org.guihuotv.speech.setting.IatSettings" >
         </activity>
         <activity
-            android:name="org.guihuotv.voicedemo.IatDemo"
+            android:name="org.guihuotv.voice.IatDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="org.guihuotv.voicedemo.TtsDemo"
+            android:name="org.guihuotv.voice.TtsDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
