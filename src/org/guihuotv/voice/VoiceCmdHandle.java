@@ -16,7 +16,7 @@ public class VoiceCmdHandle {
 	 * @param cmds
 	 * @return
 	 */
-	public static String handleVoiceCmd(List<NgnSay> cmds, IatHelper iat, TTSHelper tts, WebView web) {
+	public static String handleVoiceCmd(String say, List<NgnSay> cmds, IatHelper iat, TTSHelper tts, WebView web) {
 		String showTxt = "";
 		String sayTxt = "主公，我太笨了，不知道该怎么回答你！";
 		if (cmds != null && cmds.size() > 0) {

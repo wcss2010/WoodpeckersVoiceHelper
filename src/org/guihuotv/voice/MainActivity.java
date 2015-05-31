@@ -31,7 +31,7 @@ public class MainActivity extends Activity implements IatListener {
 	private Button TTSSet;
 	private Button voiceSet;
 	private Button listen;
-//	private LinearLayout buttons;
+	// private LinearLayout buttons;
 	private IatHelper iat = new IatHelper();
 	private TTSHelper tts = new TTSHelper();
 	private DisplayMetrics display;
@@ -47,7 +47,7 @@ public class MainActivity extends Activity implements IatListener {
 		voiceSet = (Button) this.findViewById(R.id.voiceSet);
 		TTSSet = (Button) this.findViewById(R.id.TTSSet);
 		listen = (Button) this.findViewById(R.id.listen);
-//		buttons = (LinearLayout) this.findViewById(R.id.btns);
+		// buttons = (LinearLayout) this.findViewById(R.id.btns);
 
 		ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
@@ -120,7 +120,7 @@ public class MainActivity extends Activity implements IatListener {
 		}
 
 		// TODO 响应语音指令
-		String sayTxt = VoiceCmdHandle.handleVoiceCmd(list, iat, tts, webView);
+		String sayTxt = VoiceCmdHandle.handleVoiceCmd(resultStr, list, iat, tts, webView);
 		if (sayTxt != null && !sayTxt.isEmpty()) {
 			showTip(sayTxt);
 		}
