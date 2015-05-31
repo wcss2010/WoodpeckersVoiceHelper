@@ -6,7 +6,7 @@ import android.app.Application;
 
 import com.iflytek.cloud.SpeechUtility;
 
-public class SpeechApp extends Application {
+public class WoodpeckersVoiceApp extends Application {
 
 	@Override
 	public void onCreate() {
@@ -15,7 +15,7 @@ public class SpeechApp extends Application {
 		// 注意：此接口在非主进程调用会返回null对象，如需在非主进程使用语音功能，请增加参数：SpeechConstant.FORCE_LOGIN+"=true"
 		// 参数间使用“,”分隔。
 		// 设置你申请的应用appid
-		SpeechUtility.createUtility(SpeechApp.this, "appid=" + getString(R.string.app_id));
+		SpeechUtility.createUtility(WoodpeckersVoiceApp.this, "appid=" + getString(R.string.app_id));
 		super.onCreate();
 	}
 }
