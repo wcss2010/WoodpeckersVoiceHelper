@@ -1,5 +1,7 @@
 package org.guihuotv.voicedemo;
 
+import org.guihuotv.voice.R;
+
 import android.app.Application;
 
 import com.iflytek.cloud.SpeechUtility;

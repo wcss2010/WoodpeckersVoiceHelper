@@ -7,6 +7,7 @@ import org.guihuotv.speech.setting.IatSettings;
 import org.guihuotv.speech.util.ApkInstaller;
 import org.guihuotv.speech.util.FucUtil;
 import org.guihuotv.speech.util.JsonParser;
+import org.guihuotv.voice.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 

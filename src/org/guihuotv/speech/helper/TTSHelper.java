@@ -2,7 +2,7 @@ package org.guihuotv.speech.helper;
 
 import org.guihuotv.speech.setting.TtsSettings;
 import org.guihuotv.speech.util.ApkInstaller;
-import org.guihuotv.voicedemo.R;
+import org.guihuotv.voice.R;
 import org.guihuotv.voicedemo.TtsDemo;
 
 import android.app.Activity;

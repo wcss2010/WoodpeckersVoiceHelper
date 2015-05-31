@@ -1,6 +1,6 @@
 package org.guihuotv.speech.util;
 
-import org.guihuotv.voicedemo.R;
+import org.guihuotv.voice.R;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.iflytek.cloud.SpeechUtility;
-
 
 /**
  * 弹出提示框，下载服务组件

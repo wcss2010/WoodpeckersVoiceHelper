@@ -2,10 +2,10 @@ package org.guihuotv.voicedemo;
 
 import org.guihuotv.speech.setting.TtsSettings;
 import org.guihuotv.speech.util.ApkInstaller;
+import org.guihuotv.voice.R;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -183,7 +183,7 @@ public class TtsDemo extends Activity implements OnClickListener {
 		switch (mRadioGroup.getCheckedRadioButtonId()) {
 		// 选择在线合成
 		case R.id.tts_radioCloud:			
-			new AlertDialog.Builder(this).setTitle("在线合成发音人选项")
+			new android.app.AlertDialog.Builder(this).setTitle("在线合成发音人选项")
 				.setSingleChoiceItems(cloudVoicersEntries, // 单选框有几项,各是什么名字
 						selectedNum, // 默认的选项
 						new DialogInterface.OnClickListener() { // 点击单选框后的处理

@@ -1,7 +1,7 @@
 package org.guihuotv.speech.setting;
 
 import org.guihuotv.speech.util.SettingTextWatcher;
-import org.guihuotv.voicedemo.R;
+import org.guihuotv.voice.R;
 
 import android.os.Bundle;
 import android.preference.EditTextPreference;

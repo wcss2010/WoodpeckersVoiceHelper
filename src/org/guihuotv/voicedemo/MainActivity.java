@@ -2,6 +2,7 @@ package org.guihuotv.voicedemo;
 
 import java.util.List;
 
+import org.guihuotv.voice.R;
 import org.guihuotv.webservice.NgnSay;
 import org.guihuotv.webservice.VoiceCmdHelper;
 

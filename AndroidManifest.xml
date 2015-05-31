@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.guihuotv.voicedemo"
+    package="org.guihuotv.voice"
     android:versionCode="1"
     android:versionName="2.0.1018.1013" >
 
     <application
+        android:name="WoodpeckersVoiceApp"
         android:icon="@drawable/icon"
-        android:name="SpeechApp"
-        android:label="讯飞语音示例" >
+        android:label="啄木鸟语音助手" >
         <activity
             android:name="org.guihuotv.voicedemo.MainActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:icon="@drawable/icon"
-            android:label="讯飞语音示例"
+            android:label="啄木鸟语音助手"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,12 +37,10 @@
         <!-- 移动统计分析 -->
         <meta-data
             android:name="IFLYTEK_APPKEY"
-            android:value="'556b0f3b'" />
+            android:value="&apos;556b0f3b&apos;" />
         <meta-data
             android:name="IFLYTEK_CHANNEL"
             android:value="Android_Demo" />
-
-
     </application>
 
     <uses-sdk android:minSdkVersion="8" />

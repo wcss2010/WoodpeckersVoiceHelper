@@ -7,7 +7,7 @@ import org.guihuotv.speech.setting.IatSettings;
 import org.guihuotv.speech.util.ApkInstaller;
 import org.guihuotv.speech.util.FucUtil;
 import org.guihuotv.speech.util.JsonParser;
-import org.guihuotv.voicedemo.R;
+import org.guihuotv.voice.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,7 +18,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.iflytek.cloud.ErrorCode;
