@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -33,7 +34,7 @@ public class MainActivity extends Activity implements IatListener {
 	private LinearLayout buttons;
 	private IatHelper iat = new IatHelper();
 	private TTSHelper tts = new TTSHelper();
-	private Display display;
+	private DisplayMetrics display;
 
 	@SuppressLint("ShowToast")
 	public void onCreate(Bundle savedInstanceState) {
@@ -61,15 +62,18 @@ public class MainActivity extends Activity implements IatListener {
 		}
 		iat.setListener(this);
 
-		display = getWindowManager().getDefaultDisplay();
-		this.webView.setMinimumWidth(display.getWidth());
-		this.webView.setMinimumHeight(display.getHeight() - this.buttons.getHeight());
+		display = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(display);
+//		int w = display.widthPixels;
+//		int h = display.heightPixels - this.buttons.getHeight();
+//		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(w, h);
+//		this.webView.setLayoutParams(lp);
 
 		this.listen.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				iat.startListener(display.getWidth() > 320);
+				iat.startListener(display.widthPixels > 320);
 			}
 		});
 		this.voiceSet.setOnClickListener(new OnClickListener() {
