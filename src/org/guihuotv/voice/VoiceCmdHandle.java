@@ -16,13 +16,12 @@ public class VoiceCmdHandle {
 	 */
 	public static String handleVoiceCmd(List<NgnSay> cmds, IatHelper iat, TTSHelper tts) {
 		String showTxt = "";
-		String sayTxt = "主人，我太笨了，不知道该怎么回答你！";
+		String sayTxt = "主公，我太笨了，不知道该怎么回答你！";
 		if (cmds != null && cmds.size() > 0) {
 			if (cmds.get(0).getSyscmd().equals("say")) {
 				// 只是回答问题
 				sayTxt = cmds.get(0).getCmdcontent();
 			}
-
 		}
 
 		tts.startSpeaking(sayTxt);

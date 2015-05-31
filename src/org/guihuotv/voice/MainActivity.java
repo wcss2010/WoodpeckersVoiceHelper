@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -95,7 +96,18 @@ public class MainActivity extends Activity implements IatListener {
 	@SuppressLint("NewApi")
 	@Override
 	public void handleIatResult(IatHelper source, StringBuffer result) {
+		Log.v("test", "识别出的内容：" + result);
+
 		List<NgnSay> list = VoiceCmdHelper.getVoiceCmds(result.toString(), true);
+
+		// TODO 打印查询到的内容
+		if (list != null) {
+			for (NgnSay ns : list) {
+				Log.v("test", ns.toString());
+			}
+		}
+
+		// TODO 响应语音指令
 		String sayTxt = VoiceCmdHandle.handleVoiceCmd(list, iat, tts);
 		if (sayTxt != null && !sayTxt.isEmpty()) {
 			showTip(sayTxt);
