@@ -1,4 +1,4 @@
-package org.guihuotv.voicedemo;
+package org.guihuotv.voice;
 
 import java.util.List;
 
