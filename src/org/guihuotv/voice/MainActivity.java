@@ -1,10 +1,7 @@
 package org.guihuotv.voice;
 
-import java.util.List;
-
-import org.guihuotv.voice.R;
-import org.guihuotv.webservice.NgnSay;
-import org.guihuotv.webservice.VoiceCmdHelper;
+import org.guihuotv.speech.helper.IatHelper;
+import org.guihuotv.speech.helper.IatListener;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -15,44 +12,31 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener, IatListener {
 
 	private Toast mToast;
+	private WebView webView;
+	private Button TTSSet;
+	private Button voiceSet;
+	private Button listen;
 
 	@SuppressLint("ShowToast")
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
-
 		mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
-		SimpleAdapter listitemAdapter = new SimpleAdapter();
-		((ListView) findViewById(R.id.listview_main)).setAdapter(listitemAdapter);
-		
-		List<NgnSay> list = VoiceCmdHelper.getVoiceCmds("你好", false);
-		if (list != null) {
-			for (NgnSay ns : list) {
-				System.out.println(ns.toString());
-			}
-		}
 
-		List<NgnSay> list2 = VoiceCmdHelper.getVoiceCmds("天气", true);
-		if (list2 != null) {
-			for (NgnSay ns : list2) {
-				System.out.println(ns.toString());
-			}
-		}
+		webView = (WebView) this.findViewById(R.id.webView);
+		voiceSet = (Button) this.findViewById(R.id.voiceSet);
+		TTSSet = (Button) this.findViewById(R.id.TTSSet);
+		listen = (Button) this.findViewById(R.id.listen);
 
-		boolean result = VoiceCmdHelper.addVoiceCmd("你好吗", "say", "哈哈，你好", false);
-		if (result)
-		{
-			System.out.println("添加成功！！！");
-		}
 	}
 
 	@Override
@@ -113,5 +97,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	private void showTip(final String str) {
 		mToast.setText(str);
 		mToast.show();
+	}
+
+	@Override
+	public void handleIatResult(IatHelper source, StringBuffer result) {
+		// TODO Auto-generated method stub
+
 	}
 }

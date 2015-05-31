@@ -38,11 +38,6 @@ import com.iflytek.cloud.ui.RecognizerDialogListener;
  * 
  */
 public class IatHelper {
-
-	public interface IatListener {
-		void handleIatResult(IatHelper source, StringBuffer result);
-	}
-
 	private static String TAG = IatHelper.class.getSimpleName();
 
 	// 语音听写对象
