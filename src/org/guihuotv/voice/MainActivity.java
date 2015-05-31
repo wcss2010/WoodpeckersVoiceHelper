@@ -64,10 +64,11 @@ public class MainActivity extends Activity implements IatListener {
 
 		display = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(display);
-//		int w = display.widthPixels;
-//		int h = display.heightPixels - this.buttons.getHeight();
-//		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(w, h);
-//		this.webView.setLayoutParams(lp);
+		// int w = display.widthPixels;
+		// int h = display.heightPixels - this.buttons.getHeight();
+		// LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(w, h);
+		// this.webView.setLayoutParams(lp);
+		webView.getSettings().setJavaScriptEnabled(true);
 
 		this.listen.setOnClickListener(new OnClickListener() {
 
@@ -118,7 +119,7 @@ public class MainActivity extends Activity implements IatListener {
 		}
 
 		// TODO 响应语音指令
-		String sayTxt = VoiceCmdHandle.handleVoiceCmd(list, iat, tts);
+		String sayTxt = VoiceCmdHandle.handleVoiceCmd(list, iat, tts, webView);
 		if (sayTxt != null && !sayTxt.isEmpty()) {
 			showTip(sayTxt);
 		}
