@@ -59,7 +59,7 @@
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/selector_btn_back"
+            android:background="@drawable/selector_btn"
             android:text="听写"
             android:textColor="#ffffff"/>
 
@@ -69,7 +69,7 @@
             android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/selector_btn_back"
+            android:background="@drawable/selector_btn"
             android:text="听写"
             android:textColor="#ffffff"/>
 
@@ -79,7 +79,7 @@
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/selector_btn_back"
+            android:background="@drawable/selector_btn"
             android:text="听写"
             android:textColor="#ffffff"/>
     </RelativeLayout>
