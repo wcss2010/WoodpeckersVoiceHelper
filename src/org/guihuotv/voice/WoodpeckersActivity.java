@@ -32,7 +32,6 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 	private Button mBtnBack;// 退出btn
 	private Button mBtnTTS;// 朗读设置btn
 	private Button mBtnIAT;// 听写设置btn
-	private EditText mEditTextContent;
 	private ListView mListView;
 	private ChatMsgViewAdapter mAdapter;// 消息视图的Adapter
 	private List<ChatMsgEntity> mDataArrays = new ArrayList<ChatMsgEntity>();// 消息对象数组
@@ -123,7 +122,6 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 			entity.setMsgType(isUser);
 			mDataArrays.add(entity);
 			mAdapter.notifyDataSetChanged();// 通知ListView，数据已发生改变
-			mEditTextContent.setText("");// 清空编辑框数据
 			mListView.setSelection(mListView.getCount() - 1);// 发送一条消息时，ListView显示选择最后一项
 		}
 	}
