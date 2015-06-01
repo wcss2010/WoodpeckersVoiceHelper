@@ -22,7 +22,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -41,6 +40,7 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 	private IatHelper iat = new IatHelper();
 	private TTSHelper tts = new TTSHelper();
 	private DisplayMetrics display;
+	private int maxShowCount = 20;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -115,6 +115,10 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 	 */
 	public void addMsg(boolean isUser, String name, String msg) {
 		if (name != null && msg != null && name.length() > 0 && msg.length() > 0) {
+			if (this.mDataArrays.size() >= maxShowCount) {
+				this.mDataArrays.clear();
+			}
+
 			ChatMsgEntity entity = new ChatMsgEntity();
 			entity.setName(name);
 			entity.setDate(getDate());
