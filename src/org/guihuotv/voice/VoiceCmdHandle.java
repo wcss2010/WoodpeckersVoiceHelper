@@ -18,7 +18,6 @@ public class VoiceCmdHandle {
 	 * @return
 	 */
 	public static String handleVoiceCmd(String say, List<NgnSay> cmds, IatHelper iat, TTSHelper tts) {
-		String showTxt = "";
 		String sayTxt = "主公，我太笨了，不知道该怎么回答你！";
 		if (cmds != null && cmds.size() > 0) {
 			if (cmds.get(0).getSyscmd().equals("say")) {
@@ -34,6 +33,6 @@ public class VoiceCmdHandle {
 		}
 
 		tts.startSpeaking(sayTxt);
-		return showTxt;
+		return sayTxt;
 	}
 }
