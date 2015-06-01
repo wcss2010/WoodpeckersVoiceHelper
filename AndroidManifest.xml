@@ -5,11 +5,11 @@
     android:versionName="2.0.1018.1013" >
 
     <application
-        android:name="WoodpeckersVoiceApp"
+        android:name=".WoodpeckersVoiceApp"
         android:icon="@drawable/icon"
         android:label="啄木鸟语音助手" >
         <activity
-            android:name="org.guihuotv.voice.MainActivity"
+            android:name=".WoodpeckersActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:icon="@drawable/icon"
             android:label="啄木鸟语音助手"
@@ -23,16 +23,6 @@
         <activity android:name="org.guihuotv.speech.setting.TtsSettings" >
         </activity>
         <activity android:name="org.guihuotv.speech.setting.IatSettings" >
-        </activity>
-        <activity
-            android:name="org.guihuotv.voice.IatDemo"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="org.guihuotv.voice.TtsDemo"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
         </activity>
         <!-- 移动统计分析 -->
         <meta-data
