@@ -19,7 +19,7 @@
             android:layout_marginLeft="10dp"
             android:background="@drawable/selector_btn_back"
             android:paddingLeft="10dp"
-            android:text="返回"
+            android:text="退出"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 
@@ -27,45 +27,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="way"
+            android:text="啄木鸟语音助手"
             android:textColor="#ffffff"
             android:textSize="20.0sp" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/rl_bottom"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/layout_bg1" >
-
-        <Button
-            android:id="@+id/btn_send"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:text="发送" />
-
-        <EditText
-            android:id="@+id/et_sendmessage"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@id/btn_send"
-            android:background="@drawable/edittext1"
-            android:singleLine="true"
-            android:textSize="18sp" />
-    </RelativeLayout>
-
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/listviews"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/rl_bottom"
         android:layout_below="@id/rl_layout"
         android:layout_marginLeft="10.0dip"
         android:layout_marginRight="10.0dip"
@@ -74,5 +44,44 @@
         android:divider="@null"
         android:dividerHeight="5dp"
         android:scrollbars="none" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/layout_bg1" >
+
+        <Button
+            android:id="@+id/btn_listen"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_btn_back"
+            android:text="听写"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/btn_voice"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_btn_back"
+            android:text="听写"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/btn_tts"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_btn_back"
+            android:text="听写"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
 
 </RelativeLayout>
