@@ -21,7 +21,6 @@ import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements IatListener {
@@ -102,27 +101,40 @@ public class MainActivity extends Activity implements IatListener {
 	@SuppressLint("NewApi")
 	@Override
 	public void handleIatResult(IatHelper source, StringBuffer result) {
-		String resultStr = result.toString();
+		String results = result.toString();
 		if (result != null) {
-			resultStr = result.toString().replace("。", "");
+			results = result.toString().replace("。", "");
 		}
-		Log.v("test", "识别出的内容：" + resultStr);
+		Log.v("test", "识别出的内容：" + results);
+		final String resultStr = results;
+		new Thread(new Runnable() {
 
-		List<NgnSay> list = VoiceCmdHelper.getVoiceCmds(resultStr, true);
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				final List<NgnSay> list = VoiceCmdHelper.getVoiceCmds(resultStr, true);
 
-		// TODO 打印查询到的内容
-		if (list != null) {
-			for (NgnSay ns : list) {
-				Log.v("test", ns.toString());
+				// TODO 打印查询到的内容
+				if (list != null) {
+					for (NgnSay ns : list) {
+						Log.v("test", ns.toString());
+					}
+				} else {
+					Log.v("test", "没有查询到任务内容！");
+				}
+
+				MainActivity.this.runOnUiThread(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO 响应语音指令
+						String sayTxt = VoiceCmdHandle.handleVoiceCmd(resultStr, list, iat, tts, webView);
+						if (sayTxt != null && !sayTxt.isEmpty()) {
+							showTip(sayTxt);
+						}
+					}
+				});
 			}
-		} else {
-			Log.v("test", "没有查询到任务内容！");
-		}
-
-		// TODO 响应语音指令
-		String sayTxt = VoiceCmdHandle.handleVoiceCmd(resultStr, list, iat, tts, webView);
-		if (sayTxt != null && !sayTxt.isEmpty()) {
-			showTip(sayTxt);
-		}
+		}).start();
 	}
 }
