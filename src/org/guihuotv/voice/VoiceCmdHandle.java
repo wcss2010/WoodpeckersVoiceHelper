@@ -7,8 +7,6 @@ import org.guihuotv.speech.helper.IatHelper;
 import org.guihuotv.speech.helper.TTSHelper;
 import org.guihuotv.webservice.NgnSay;
 
-import android.webkit.WebView;
-
 public class VoiceCmdHandle {
 	static java.text.SimpleDateFormat times = new java.text.SimpleDateFormat("HH点mm分ss秒");
 	static java.text.SimpleDateFormat dates = new java.text.SimpleDateFormat("yyyy年MM月dd日");
@@ -19,7 +17,7 @@ public class VoiceCmdHandle {
 	 * @param cmds
 	 * @return
 	 */
-	public static String handleVoiceCmd(String say, List<NgnSay> cmds, IatHelper iat, TTSHelper tts, WebView web) {
+	public static String handleVoiceCmd(String say, List<NgnSay> cmds, IatHelper iat, TTSHelper tts) {
 		String showTxt = "";
 		String sayTxt = "主公，我太笨了，不知道该怎么回答你！";
 		if (cmds != null && cmds.size() > 0) {

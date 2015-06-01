@@ -3,7 +3,6 @@ package org.guihuotv.speech.helper;
 import org.guihuotv.speech.setting.TtsSettings;
 import org.guihuotv.speech.util.ApkInstaller;
 import org.guihuotv.voice.R;
-import org.guihuotv.voice.TtsDemo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -32,7 +31,8 @@ import com.iflytek.cloud.SynthesizerListener;
  * 
  */
 public class TTSHelper {
-	private static String TAG = TtsDemo.class.getSimpleName();
+	private static String TAG = TTSHelper.class.getSimpleName();
+	
 	// 语音合成对象
 	private SpeechSynthesizer mTts;
 
