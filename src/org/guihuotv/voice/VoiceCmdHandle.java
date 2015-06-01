@@ -17,7 +17,7 @@ public class VoiceCmdHandle {
 	 * @param cmds
 	 * @return
 	 */
-	public static String handleVoiceCmd(String say, List<NgnSay> cmds, IatHelper iat, TTSHelper tts) {
+	public static String handleVoiceCmd(WoodpeckersActivity mainActivity, String say, List<NgnSay> cmds, IatHelper iat, TTSHelper tts) {
 		String sayTxt = "主公，我太笨了，不知道该怎么回答你！";
 		if (cmds != null && cmds.size() > 0) {
 			if (cmds.get(0).getSyscmd().equals("say")) {

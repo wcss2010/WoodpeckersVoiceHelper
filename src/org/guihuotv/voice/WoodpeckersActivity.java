@@ -179,7 +179,7 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 					@Override
 					public void run() {
 						// TODO 响应语音指令
-						String sayTxt = VoiceCmdHandle.handleVoiceCmd(resultStr, list, iat, tts);
+						String sayTxt = VoiceCmdHandle.handleVoiceCmd(WoodpeckersActivity.this,resultStr, list, iat, tts);
 						if (sayTxt != null && !sayTxt.isEmpty()) {
 							addMsg(false, WoodpeckersActivity.this.sysName, sayTxt);
 						}
