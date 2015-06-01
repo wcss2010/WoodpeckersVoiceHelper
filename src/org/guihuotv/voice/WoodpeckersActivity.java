@@ -36,6 +36,7 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 	private List<ChatMsgEntity> mDataArrays = new ArrayList<ChatMsgEntity>();// 消息对象数组
 	private String userName = "主公";
 	private String sysName = "您的秘书";
+	private String errorVoiceMsg = userName + "，我太笨了，不知道该怎么回答你！";
 	private Toast mToast;
 	private IatHelper iat = new IatHelper();
 	private TTSHelper tts = new TTSHelper();
@@ -179,9 +180,13 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 					@Override
 					public void run() {
 						// TODO 响应语音指令
-						String sayTxt = VoiceCmdHandle.handleVoiceCmd(WoodpeckersActivity.this,resultStr, list, iat, tts);
+						String sayTxt = VoiceCmdHandle.handleVoiceCmd(WoodpeckersActivity.this, resultStr, list, iat, tts);
 						if (sayTxt != null && !sayTxt.isEmpty()) {
+							tts.startSpeaking(sayTxt);
 							addMsg(false, WoodpeckersActivity.this.sysName, sayTxt);
+						} else {
+							tts.startSpeaking(errorVoiceMsg);
+							addMsg(false, WoodpeckersActivity.this.sysName, errorVoiceMsg);
 						}
 					}
 				});

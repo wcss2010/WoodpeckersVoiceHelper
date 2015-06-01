@@ -18,7 +18,7 @@ public class VoiceCmdHandle {
 	 * @return
 	 */
 	public static String handleVoiceCmd(WoodpeckersActivity mainActivity, String say, List<NgnSay> cmds, IatHelper iat, TTSHelper tts) {
-		String sayTxt = "主公，我太笨了，不知道该怎么回答你！";
+		String sayTxt = "";
 		if (cmds != null && cmds.size() > 0) {
 			if (cmds.get(0).getSyscmd().equals("say")) {
 				// 只是回答问题
@@ -31,8 +31,7 @@ public class VoiceCmdHandle {
 				sayTxt = "现在是" + times.format(new Date());
 			}
 		}
-
-		tts.startSpeaking(sayTxt);
+		
 		return sayTxt;
 	}
 }
