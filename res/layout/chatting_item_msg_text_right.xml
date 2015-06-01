@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/mini_avatar_shadow"
+            android:background="@drawable/syshead"
             android:focusable="false" />
 
         <TextView
