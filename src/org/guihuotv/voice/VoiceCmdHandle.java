@@ -17,21 +17,24 @@ public class VoiceCmdHandle {
 	 * @param cmds
 	 * @return
 	 */
-	public static String handleVoiceCmd(WoodpeckersActivity mainActivity, String say, List<NgnSay> cmds, IatHelper iat, TTSHelper tts) {
+	public static String handleVoiceCmd(WoodpeckersActivity mainActivity, String say, List<NgnSay> cmdList, IatHelper iat, TTSHelper tts) {
 		String sayTxt = "";
-		if (cmds != null && cmds.size() > 0) {
-			if (cmds.get(0).getSyscmd().equals("say")) {
+		if (cmdList != null && cmdList.size() > 0) {
+			// 比较靠普的是最后一个结果
+			NgnSay useCmd = cmdList.get(cmdList.size() - 1);
+
+			if (useCmd.getSyscmd().equals("say")) {
 				// 只是回答问题
-				sayTxt = cmds.get(0).getCmdcontent();
-			} else if (cmds.get(0).getSyscmd().equals("saydate")) {
+				sayTxt = useCmd.getCmdcontent();
+			} else if (useCmd.getSyscmd().equals("saydate")) {
 				// 只是回答问题
 				sayTxt = "现在是" + dates.format(new Date());
-			} else if (cmds.get(0).getSyscmd().equals("saytime")) {
+			} else if (useCmd.getSyscmd().equals("saytime")) {
 				// 只是回答问题
 				sayTxt = "现在是" + times.format(new Date());
 			}
 		}
-		
+
 		return sayTxt;
 	}
 }
