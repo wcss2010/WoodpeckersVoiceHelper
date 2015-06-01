@@ -154,6 +154,8 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 			results = result.toString().replace("。", "");
 		}
 		Log.v("test", "识别出的内容：" + results);
+		addMsg(true, this.userName, results);
+
 		final String resultStr = results;
 		new Thread(new Runnable() {
 
@@ -172,7 +174,6 @@ public class WoodpeckersActivity extends Activity implements OnClickListener, Ia
 				}
 
 				WoodpeckersActivity.this.runOnUiThread(new Runnable() {
-
 					@Override
 					public void run() {
 						// TODO 响应语音指令
